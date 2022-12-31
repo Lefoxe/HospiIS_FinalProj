@@ -313,6 +313,9 @@ public class Patient extends JFrame{
 
 			else if(e.getSource()==rtrn2){
 				frm2.dispose();
+				pnl3.remove(sp);
+				pnl6.remove(sp);
+				pnl9.remove(sp);
 				pnl.removeAll();
 				pnl.add(title);
 				pnl.add(back);
