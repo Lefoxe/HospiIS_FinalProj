@@ -82,6 +82,7 @@ public class Doctor extends JFrame{
 	}
 
 	class ActionButton1 implements ActionListener{
+		@Override
 		public void actionPerformed(ActionEvent e){
 			if(e.getSource()==add){
 				frm.setVisible(false);
@@ -208,7 +209,7 @@ public class Doctor extends JFrame{
 				frm2.setIconImage(image.getImage());
 				frm2.setSize(500,500);
 				frm2.setLocationRelativeTo(null);
-				frm2.setTitle("Edit Docotor's Records");
+				frm2.setTitle("Edit Doctor's Records");
 				frm2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				pnl8.setBackground(new Color(0xDAF7A6));
 				pnl9.setBackground(new Color(0xDAF7A6));
@@ -263,6 +264,7 @@ public class Doctor extends JFrame{
 	}
 
 	class ActionButton2 implements ActionListener{
+		@Override
 		public void actionPerformed(ActionEvent e){
 			if(e.getSource()==add2){
 				String a = docID.getText();
@@ -317,6 +319,9 @@ public class Doctor extends JFrame{
 				pnl3.remove(sp);
 				pnl6.remove(sp);
 				pnl9.remove(sp);
+				frm2.remove(pnl4);
+				frm2.remove(pnl7);
+				frm2.remove(pnl10);
 				pnl.removeAll();
 				pnl.add(title);
 				pnl.add(back);

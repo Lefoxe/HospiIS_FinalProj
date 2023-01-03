@@ -3,50 +3,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Patient extends JFrame{
-	static JFrame frm = new JFrame();
-	JFrame frm2 = new JFrame();
-    JPanel pnl = new JPanel();
-	JPanel pnl2 = new JPanel();
-	JPanel pnl3 = new JPanel();
-	JPanel pnl4 = new JPanel();
-	JPanel pnl5 = new JPanel();
-	JPanel pnl6 = new JPanel();
-	JPanel pnl7 = new JPanel();
-	JPanel pnl8 = new JPanel();
-	JPanel pnl9 = new JPanel();
-	JPanel pnl10 = new JPanel();
-	ImageIcon image = new ImageIcon("logo.png");
-
-	Font f = new Font("Sergoe UI", Font.BOLD, 48);
-	Font f2 = new Font("Sergoe UI", Font.PLAIN, 14);
-	Font f3 = new Font("Sergoe UI", Font.BOLD, 14);
-
+public class Patient extends Doctor{
 	JLabel back = new JLabel();
 	JLabel title = new JLabel("Tamago Hospital");
 	JLabel Name = new JLabel("Enter Name: ");
 	JLabel Room = new JLabel("Enter Room No.: ");
 	JLabel Ail = new JLabel("Enter Ailment: ");
-	JLabel column = new JLabel("Enter column: ");
-	JLabel old = new JLabel("Enter value to replace: ");
-	JLabel bago = new JLabel("Enter new value: ");
-
-	JButton add = new JButton("Add");
-	JButton rmv = new JButton("Remove");
-	JButton rtrn = new JButton("Return");
-	JButton edit = new JButton("Edit");
-	JButton add2 = new JButton("Add");
-	JButton rmv2 = new JButton("Remove");
-	JButton rtrn2 = new JButton("Return");
-	JButton edit2 = new JButton("Edit");
 
 	JTextField name = new JTextField(20);
 	JTextField room = new JTextField(20);
 	JTextField ail = new JTextField(20);
 	JTextField phys = new JTextField(20);
-
-	JTable table;
-	JScrollPane sp;
 
 	public void prefaceP(){
 		frm.setIconImage(image.getImage());
@@ -81,6 +48,7 @@ public class Patient extends JFrame{
 	}
 
 	class ActionButton1 implements ActionListener{
+		@Override
 		public void actionPerformed(ActionEvent e){
 			if(e.getSource()==add){
 				frm.dispose();
@@ -90,6 +58,9 @@ public class Patient extends JFrame{
 				frm2.remove(pnl5);
 				frm2.remove(pnl6);
 				frm2.remove(pnl7);
+				frm2.remove(pnl8);
+				frm2.remove(pnl9);
+				frm2.remove(pnl10);
 				frm2.repaint();
 				frm2.revalidate();
 				frm2.setIconImage(image.getImage());
@@ -150,6 +121,9 @@ public class Patient extends JFrame{
 				frm2.remove(pnl2);
 				frm2.remove(pnl3);
 				frm2.remove(pnl4);
+				frm2.remove(pnl8);
+				frm2.remove(pnl9);
+				frm2.remove(pnl10);
 				frm2.repaint();
 				frm2.revalidate();
 				frm2.setIconImage(image.getImage());
@@ -206,7 +180,7 @@ public class Patient extends JFrame{
 				frm2.setIconImage(image.getImage());
 				frm2.setSize(500,500);
 				frm2.setLocationRelativeTo(null);
-				frm2.setTitle("Edit Docotor's Records");
+				frm2.setTitle("Edit Patient's Records");
 				frm2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				pnl8.setBackground(new Color(0xDAF7A6));
 				pnl9.setBackground(new Color(0xDAF7A6));
@@ -261,6 +235,7 @@ public class Patient extends JFrame{
 	}
 
 	class ActionButton2 implements ActionListener{
+		@Override
 		public void actionPerformed(ActionEvent e){
 			if(e.getSource()==add2){
 				String a = name.getText();
@@ -316,6 +291,9 @@ public class Patient extends JFrame{
 				pnl3.remove(sp);
 				pnl6.remove(sp);
 				pnl9.remove(sp);
+				frm2.remove(pnl4);
+				frm2.remove(pnl7);
+				frm2.remove(pnl10);
 				pnl.removeAll();
 				pnl.add(title);
 				pnl.add(back);
